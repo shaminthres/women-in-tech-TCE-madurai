@@ -1,0 +1,477 @@
+@import "variables.less";
+@import "mixins.less";
+
+// Note there are a lot of used styles here,
+// will remove on release
+
+body {
+  min-width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+p {
+	font-size: 20px;
+}
+
+
+.media-pack {
+  text-decoration: underline;
+  color: #919CFF;
+  font-size: 15px;
+}
+
+#navbar-collapse {
+  background-color: @brand-success;
+  border-bottom: solid 1px #333;
+}
+
+#schedule {
+  .container {
+    h4 {
+      padding: 20px;
+      background: #eee;
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+	color: @brand-success;
+	outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+hr.star-light,
+hr.star-primary {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+    content: "\f005";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+}
+
+hr.star-light {
+    border-color: white;
+}
+
+hr.star-light:after {
+    background-color: @brand-success;
+    color: white;
+}
+
+hr.star-primary {
+    border-color: @brand-primary;
+}
+
+hr.star-primary:after {
+    background-color: white;
+    color: @brand-primary;
+}
+
+.btn {
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+
+
+  font-size: 14px;
+  height: 41px;
+  padding: 7px 0px 7px;
+  width: 105px;
+}
+.btn-register {
+  background: rgba(255, 255, 255, 0);
+  border: 2px solid white;
+  color: white;
+}
+.send-btn {
+    margin-left:50px;
+}
+
+.register-jumbotron {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.bg {
+  // Photo from Little visuals
+  // http://littlevisuals.co/page/6
+  background-image: url('../img/bg_back_.jpg');
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.bg > .overlay {
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color:#000;
+  opacity:0.5;
+}
+
+
+header {
+	text-align: center;
+	background: @brand-success;
+	color: white;
+
+
+	.container {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto 0;
+	}
+
+  .img-logo-heading {
+    width: 60%;
+  }
+
+  .intro {
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.0em;
+      font-weight: 100;
+      text-transform: uppercase;
+  }
+  .intro-strapline {
+    margin-top: -1.7%;
+
+    padding-right: 25%;
+    padding-bottom: 25px;
+    padding-left: 25%;
+
+    letter-spacing: 0.2px;
+
+    color: rgba(255, 255, 255, .9);
+  }
+
+  .intro-text {
+      color: rgba(255, 255, 255, 1);
+
+    .moving_text {
+      display: list-item;
+      list-style: none;
+      text-decoration: none;
+    }
+  }
+  .tag {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 5px;
+      color: rgba(255,255,255,0.65);
+      display: inline-block;
+      font-size: 18px;
+      line-height: 100%;
+      margin: 4px 5px 0px;
+      padding: 6px 10px;
+    }
+  .location-tag {
+    padding-top: 75px;
+  }
+
+  .intro-tags {
+    padding: 5px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  .btn:hover {
+    border: 2px solid @brand-logo-yel;
+  }
+}
+
+.speakers-text {
+  padding-top:50px;
+}
+
+.email-text {
+  text-decoration: underline;
+  color: #919CFF;
+}
+
+@media(min-width:768px) {
+	header {
+		.container {
+      padding-top: 150px;
+			padding-bottom: 100px;
+		}
+		.intro-text {
+      font-size: 1.9em;
+      font-weight: 100;
+		}
+	}
+  .register-jumbotron {
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+  }
+}
+
+
+@media(max-width:768px) {
+  header {
+    .intro-text {
+      font-size: 1.5em;
+      font-weight: 100;
+    }
+    .intro-strapline {
+      padding-right: 0;
+      padding-left: 0;
+      padding-top: 10px;
+    }
+    .img-logo-heading {
+      width: 80%;
+    }
+
+  }
+}
+
+@media(max-width:500px) {
+  header {
+    .img-logo-heading {
+      content:url("../img/logo.png");
+    }
+  }
+}
+
+
+
+
+@media(min-width:768px) {
+    .navbar-fixed-top {
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+	    .navbar-brand {
+	        font-size: 2em;
+	        -webkit-transition: all 0.3s;
+	        -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+	    }
+    }
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+		.navbar-brand {
+	        font-size: 1.5em;
+	    }
+	}
+}
+
+.navbar {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	a:focus {
+		outline: none;
+	}
+	.navbar-nav {
+		letter-spacing: 1px;
+		li {
+			a:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+.navbar-default,
+.navbar-inverse {
+	border: none;
+}
+
+section {
+    padding: 60px 0;
+    h2 {
+    	margin: 0;
+    	font-size: 3em;
+    }
+}
+
+section.success {
+	background: @brand-success;
+	color: white;
+}
+
+@media(max-width:767px) {
+	section {
+		padding: 75px 0;
+	}
+	section.first {
+		padding-top: 75px;
+	}
+
+  #schedule .container h4 {
+    width: 250px;
+  }
+
+  .panel_head2 h3 {
+    font-size: 1px !important;
+  }
+
+  .register-jumbotron {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.btn-outline {
+	color: white;
+	font-size: 20px;
+	border: solid 2px white;
+	transition: all 0.3s ease-in-out;
+	margin-top: 15px;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: @brand-success;
+		background: white;
+		border: solid 2px white;
+	}
+}
+
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid @gray-lighter;
+    input,
+    textarea {
+	    z-index: 1;
+	    position: relative;
+	    padding-right: 0;
+	    padding-left: 0;
+	    border: none;
+	    border-radius: 0;
+	    font-size: 1.5em;
+	    background: none;
+	    box-shadow: none !important;
+	    resize: none;
+    }
+    label {
+	    display: block;
+	    z-index: 0;
+	    position: relative;
+	    top: 2em;
+	    margin: 0;
+	    font-size: 0.85em;
+	    line-height: 1.764705882em;
+	    vertical-align: middle;
+	    vertical-align: baseline;
+	    opacity: 0;
+	    -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+	    -moz-transition: top 0.3s ease,opacity 0.3s ease;
+	    -ms-transition: top 0.3s ease,opacity 0.3s ease;
+	    transition: top 0.3s ease,opacity 0.3s ease;
+    }
+    &::not(:first-child) {
+	    padding-left: 14px;
+	    border-left: 1px solid @gray-lighter;
+    }
+}
+
+.floating-label-form-group-with-value {
+	label {
+	    top: 0;
+	    opacity: 1;
+	}
+}
+
+.floating-label-form-group-with-focus {
+	label {
+	    color: @brand-success;
+	}
+}
+
+form .row:first-child .floating-label-form-group {
+    border-top: 1px solid @gray-lighter;
+}
+
+#base {
+  background: @brand-primary;
+  .container {
+    padding: 120px 0 20px;
+    color: #fff;
+    text-align: center;
+    p {
+      margin-top: 10px;
+    }
+    .copy {
+      margin-top: 100px;
+      font-size: 90%;
+      a {
+        color: @brand-logo-yel;
+      }
+    }
+    .hacksoc {
+      color: white !important;
+      .hacksoc_green {
+        color: #73F273;
+      }
+    }
+
+    h3 {
+      line-height: 120%;
+      width: 50%;
+      margin: 0 auto;
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .social {
+      margin: 1em 0 2em;
+      padding-left: 0;
+      li {
+        display: inline-block;
+        margin: 0 5px;
+        a {
+          display: block;
+          width: 40px; height: 40px;
+          text-indent: -9999px;
+          opacity: 0.5;
+        }
+        a:hover { opacity: 1; }
+      }
+      li.facebook a  { background-image: url("../img/social_facebook.png");}
+      li.twitter a   { background-image: url("../img/social_twitter.png");}
+    }
+  }
+
+}
+
+.btn:focus,
+.btn:active,
+.btn.active {
+	outline: none;
+}
